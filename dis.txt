@@ -1,0 +1,41 @@
+create app
+	django-admin startapp blog
+	register app to setting.py [installed app] 'blog'
+        create urls.py
+	register app urls.py file to project level urls.py localhost:8000/blog
+	
+create function inside views.py
+	def home(request):
+           return ......
+	
+	app level url , register url and call this function
+	import views
+	from . import views
+	
+	path('home/',views.home)  //localhost:8000/blog/home
+
+
+	if html page needs to render
+	go to setting.py file
+	under the tempalates [
+		dirs:['templates']
+	]
+	
+	create folder templates paralel to manage.py
+	create your html pages over here....
+
+go to models.py
+
+create class extends models.Model
+create fields according to your column requirment....
+
+
+to give table name instruction...
+class Meta:
+	db_table ="tablename"
+
+
+
+python manage.py makemigrations  - --> migration folder it will create files.....
+python manage.py migrate....      ---> and create table to reg db
+
